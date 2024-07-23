@@ -2,32 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-body font-secondary text-grey text-lg font-medium;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply font-primary text-dark italic;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .h1 {
+    @apply text-6xl font-bold text-white lg:text-8xl;
+  }
+
+  .h2 {
+    @apply mb-4 text-[46px] font-black leading-[1.1];
+  }
+
+  .h3 {
+    @apply text-[40px] font-extrabold italic;
+  }
+
+  .h4 {
+    @apply text-[26px] font-extrabold italic text-white;
+  }
+
+  .h5 {
+    @apply text-[22px] font-medium text-white;
+  }
+
+  .pretitle {
+    @apply font-secondary text-accent mb-2 text-base font-bold uppercase tracking-[-0.04em];
+  }
+
+  .btn {
+    @apply bg-accent font-secondary hover:bg-accent-hover flex h-14 items-center justify-center rounded-full px-[42px] text-base font-semibold tracking-[0.02em] text-white outline-none transition-all duration-300;
+  }
+
+  .input {
+    @apply font-secondary text-dark placeholder:text-dark h-[56px] w-[316px] rounded-full border-2 border-gray-200 pl-[30px] text-base font-semibold outline-none;
   }
 }

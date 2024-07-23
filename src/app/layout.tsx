@@ -1,8 +1,21 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Lato, Playfair_Display } from "next/font/google"
 import "./globals.css"
+import { cn } from "@/utils/class-names"
 
-const inter = Inter({ subsets: ["latin"] })
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-lato",
+})
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +29,9 @@ type Props = Readonly<{
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(lato.variable, playfairDisplay.variable)}>
+        {children}
+      </body>
     </html>
   )
 }
