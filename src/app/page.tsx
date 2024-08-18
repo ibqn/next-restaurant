@@ -8,9 +8,7 @@ import { Testimonial } from "@/components/testimonial"
 
 export default function Home() {
   return (
-    <div className="bg-pattern mx-auto min-h-screen max-w-5xl overflow-hidden bg-repeat">
-      <div className="font-primary">primary</div>
-      <div className="font-secondary">secondary</div>
+    <div className="mx-auto min-h-screen max-w-5xl overflow-hidden bg-pattern bg-repeat">
       <Hero />
       <About />
       <Menu />
