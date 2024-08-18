@@ -8,7 +8,7 @@ import { Testimonial } from "@/components/testimonial"
 
 export default function Home() {
   return (
-    <div className="mx-auto min-h-screen max-w-5xl overflow-hidden bg-pattern bg-repeat">
+    <div className="mx-auto min-h-screen max-w-[1800px] overflow-hidden bg-pattern bg-repeat">
       <Hero />
       <About />
       <Menu />
