@@ -9,9 +9,9 @@ export const Hero = () => {
   const { pretitle, title, subtitle, btnText } = heroData
 
   return (
-    <section className="flex min-h-[980px] bg-hero bg-cover bg-right">
-      <div className="flex flex-1 flex-col bg-gradient-to-b from-black/20">
-        <Header />
+    <section className="flex min-h-[980px] flex-col bg-hero bg-cover bg-right">
+      <Header />
+      <div className="flex flex-1 bg-gradient-to-b from-black/20">
         <div className="container mx-auto flex flex-1 items-center justify-center">
           <motion.div
             variants={staggerContainer(0.3, 1)}
