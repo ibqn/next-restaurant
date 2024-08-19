@@ -12,7 +12,7 @@ import { Direction, fadeIn, staggerContainer } from "@/utils/variants"
 const headerVariants = {
   hidden: {
     padding: "84px 0 84px 0",
-    background: "transparent",
+    background: "rgba(0, 0, 0, 0)",
   },
   visible: {
     padding: "14px 0 14px 0",
