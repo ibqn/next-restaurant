@@ -7,6 +7,7 @@ import { Nav } from "@/components/nav"
 import { cn } from "@/utils/class-names"
 import Image from "next/image"
 import Link from "next/link"
+import { Direction, fadeIn, staggerContainer } from "@/utils/variants"
 
 const headerVariants = {
   hidden: {
@@ -74,8 +75,14 @@ export const Header = () => {
       className="fixed z-50 w-full max-w-[1800px] py-4"
     >
       <div className="container mx-auto">
-        <div className="relative flex items-center justify-between px-4 text-white lg:px-0">
-          <motion.div
+        <motion.div
+          variants={staggerContainer(0.3, 1)}
+          initial="hidden"
+          animate="show"
+          viewport={{ once: true }}
+          className="relative flex items-center justify-between px-4 text-white lg:px-0"
+        >
+          <div
             className={cn(
               navOpen ? "gap-y-0" : "gap-y-2",
               "order-2 flex size-12 cursor-pointer flex-col items-center justify-center rounded-full border-2 p-3 lg:order-none"
@@ -96,16 +103,18 @@ export const Header = () => {
               animate={navOpen ? { rotate: 45 } : { rotate: 0 }}
               className="h-0.5 w-full bg-white"
             ></motion.div>
+          </div>
+          <motion.div variants={fadeIn(Direction.down, "tween", 1.2, 1.4)}>
+            <Link href="/">
+              <Image
+                className={cn(isActive ? "size-[90px]" : "size-[107px]")}
+                src="/img/header/logo-white.png"
+                width={107}
+                height={107}
+                alt="logo"
+              />
+            </Link>{" "}
           </motion.div>
-          <Link href="/">
-            <Image
-              className={cn(isActive ? "size-[90px]" : "size-[107px]")}
-              src="/img/header/logo-white.png"
-              width={107}
-              height={107}
-              alt="logo"
-            />
-          </Link>
           <Socials className="hidden lg:flex" />
           <motion.div
             variants={navVariants}
@@ -115,7 +124,7 @@ export const Header = () => {
           >
             <Nav />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </motion.header>
   )
