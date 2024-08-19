@@ -120,7 +120,7 @@ export const Header = () => {
             variants={navVariants}
             initial="hidden"
             animate={navOpen ? "visible" : "hidden"}
-            className="absolute bottom-0 right-0 top-[120px] z-50 h-[50vh] w-[310px] rounded-lg bg-accent shadow-xl lg:left-0"
+            className="absolute bottom-0 right-0 top-[120px] z-50 flex h-[50vh] w-[310px] rounded-lg bg-accent shadow-xl lg:left-0"
           >
             <Nav />
           </motion.div>
