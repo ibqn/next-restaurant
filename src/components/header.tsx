@@ -61,6 +61,7 @@ export const Header = () => {
     }
 
     window.addEventListener("scroll", handleScroll)
+    handleScroll()
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
@@ -105,23 +106,21 @@ export const Header = () => {
             ></motion.div>
           </div>
 
-          <motion.div
-            className={cn(isActive ? "size-[90px]" : "size-[107px]")}
-            variants={fadeIn(Direction.down, "tween", 1.2, 1.4)}
-          >
-            <Link
-              className="lg:absolute lg:left-1/2 lg:-translate-x-1/2"
-              href="/"
-            >
-              <Image
-                className={cn(isActive ? "size-[90px]" : "size-[107px]")}
-                src="/img/header/logo-white.png"
-                width={107}
-                height={107}
-                alt="logo"
-              />
-            </Link>
-          </motion.div>
+          <div className={cn(isActive ? "size-[90px]" : "size-[107px]")}>
+            <div className="lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+              <motion.div variants={fadeIn(Direction.down, "tween", 1.2, 1.4)}>
+                <Link href="/">
+                  <Image
+                    className={cn(isActive ? "size-[90px]" : "size-[107px]")}
+                    src="/img/header/logo-white.png"
+                    width={107}
+                    height={107}
+                    alt="logo"
+                  />
+                </Link>
+              </motion.div>
+            </div>
+          </div>
 
           <Socials className="hidden lg:flex" />
 
