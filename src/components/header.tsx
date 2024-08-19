@@ -104,8 +104,15 @@ export const Header = () => {
               className="h-0.5 w-full bg-white"
             ></motion.div>
           </div>
-          <motion.div variants={fadeIn(Direction.down, "tween", 1.2, 1.4)}>
-            <Link href="/">
+
+          <motion.div
+            className={cn(isActive ? "size-[90px]" : "size-[107px]")}
+            variants={fadeIn(Direction.down, "tween", 1.2, 1.4)}
+          >
+            <Link
+              className="lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+              href="/"
+            >
               <Image
                 className={cn(isActive ? "size-[90px]" : "size-[107px]")}
                 src="/img/header/logo-white.png"
@@ -113,9 +120,11 @@ export const Header = () => {
                 height={107}
                 alt="logo"
               />
-            </Link>{" "}
+            </Link>
           </motion.div>
+
           <Socials className="hidden lg:flex" />
+
           <motion.div
             variants={navVariants}
             initial="hidden"
