@@ -61,7 +61,7 @@ export const Menu = () => {
         className="z-10 mt-14 flex-1 lg:mt-20"
       >
         <div className="container mx-auto">
-          <div className="z-30 mb-8 min-h-[590px]">
+          <div className="z-30 mb-8 min-h-[590px] shadow-xl">
             <div className="grid min-h-[590px] grid-cols-1 lg:grid-cols-4">
               {menuItems.map((item, index) => {
                 const { name, image, price, description } = item

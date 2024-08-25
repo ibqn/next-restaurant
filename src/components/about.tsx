@@ -1,4 +1,5 @@
 "use client"
+
 import { aboutData } from "@/data"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -16,7 +17,7 @@ export const About = () => {
     <section className="flex min-h-[620px]">
       <div className="container mx-auto flex flex-1">
         <motion.div
-          variants={staggerContainer(0.1, 0.2)}
+          variants={staggerContainer(0.3, 1)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
