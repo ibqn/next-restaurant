@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-body font-secondary text-grey text-lg font-medium;
+    @apply bg-body font-secondary text-lg font-medium text-grey;
   }
 
   .h1,
@@ -13,7 +13,7 @@
   .h4,
   .h5,
   .h6 {
-    @apply font-primary text-dark italic;
+    @apply font-primary italic text-dark;
   }
 
   .h1 {
@@ -37,14 +37,40 @@
   }
 
   .pretitle {
-    @apply font-secondary text-accent mb-2 text-base font-bold uppercase tracking-[-0.04em];
+    @apply mb-2 font-secondary text-base font-bold uppercase tracking-[-0.04em] text-accent;
   }
 
   .btn {
-    @apply bg-accent font-secondary hover:bg-accent-hover flex h-14 items-center justify-center rounded-full px-[42px] text-base font-semibold tracking-[0.02em] text-white outline-none transition-all duration-300;
+    @apply flex h-14 items-center justify-center rounded-full bg-accent px-[42px] font-secondary text-base font-semibold tracking-[0.02em] text-white outline-none transition-all duration-300 hover:bg-accent-hover;
   }
 
   .input {
-    @apply font-secondary text-dark placeholder:text-dark h-[56px] w-[316px] rounded-full border-2 border-gray-200 pl-[30px] text-base font-semibold outline-none;
+    @apply h-[56px] w-[316px] rounded-full border-2 border-gray-200 pl-[30px] font-secondary text-base font-semibold text-dark outline-none placeholder:text-dark;
   }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.swiper-button-prev::after {
+  background-image: url("/img/testimonial/arrow-left.svg");
+}
+
+.swiper-button-next::after {
+  background-image: url("/img/testimonial/arrow-right.svg");
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid #fe7634;
+  content: "" !important;
 }
