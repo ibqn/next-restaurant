@@ -74,3 +74,9 @@
   border: 1px solid #fe7634;
   content: "" !important;
 }
+
+.react-time-picker {
+  div[class*="-picker__wrapper"] {
+    border: none;
+  }
+}
